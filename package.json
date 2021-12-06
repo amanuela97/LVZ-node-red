@@ -2,7 +2,14 @@
     "name": "LVZ-node-red",
     "description": "A gimbal/camera control system using levitezer protocol/box.",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-persist": "1.1.1",
+        "node-red-contrib-ui-artless-gauge": "0.3.11",
+        "node-red-contrib-ui-joystick": "1.0.0",
+        "node-red-contrib-ui-led": "0.4.10",
+        "node-red-dashboard": "2.30.0",
+        "node-red-node-serialport": "0.14.1"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",

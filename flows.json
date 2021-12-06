@@ -14,13 +14,6 @@
         "info": ""
     },
     {
-        "id": "711e34d7173e67d0",
-        "type": "tab",
-        "label": "Test",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "6cb7de50.141fb",
         "type": "subflow",
         "name": "Lift Adjust",
@@ -5972,32 +5965,6 @@
         ]
     },
     {
-        "id": "8eae447b85913a0b",
-        "type": "join",
-        "z": "711e34d7173e67d0",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "1",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 650,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "8842cc9ccfc35a11",
         "type": "function",
         "z": "db1a20b495504790",
@@ -6136,58 +6103,6 @@
         "wires": [
             [
                 "8c16f56581612938"
-            ]
-        ]
-    },
-    {
-        "id": "038b1574ee587ed5",
-        "type": "function",
-        "z": "711e34d7173e67d0",
-        "name": "Load Colour",
-        "func": "var Command = msg.payload.Control;\n\n\nif(Command == \"resetColour\") { msg.payload = \"7f7f7f7f\"; return msg;} \nif(Command == \"setColour\")   { msg.payload = msg.payload.Colour; return msg;} ",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 590,
-        "y": 900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9abc4f0c72766da7",
-        "type": "function",
-        "z": "711e34d7173e67d0",
-        "name": "Data in",
-        "func": "\n\nmsg.payload = msg.payload;\n\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 360,
-        "y": 880,
-        "wires": [
-            [
-                "038b1574ee587ed5"
-            ]
-        ]
-    },
-    {
-        "id": "a43d0bbf26ba8548",
-        "type": "function",
-        "z": "711e34d7173e67d0",
-        "name": "Reset",
-        "func": "\n\nmsg.payload = { Control: \"resetColour\"};\n\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 350,
-        "y": 820,
-        "wires": [
-            [
-                "9abc4f0c72766da7"
             ]
         ]
     },
