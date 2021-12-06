@@ -49,7 +49,7 @@ If you want to run the latest code from git, here's how to get started:
 
 8 Lastly, connect to the gimbal by going to [Setting tabs -> Gimbal Setups], selecting tcp connection then providing the ip and port number of the box.
 
-   ![When the connection status turns green, the connection has been established](\projects\LVZ-node-red\setup.png)
+   ![When the connection status turns green, the connection has been established](https://github.com/amanuela97/LVZ-node-red/blob/master/setup.png)
    
 
 ### About
