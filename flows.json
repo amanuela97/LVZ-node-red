@@ -3783,6 +3783,21 @@
                 "label": "Presets",
                 "value": "Gimbal_Presets",
                 "type": "str"
+            },
+            {
+                "label": "Camera Setup",
+                "value": "Camera_Camera_Setup",
+                "type": "str"
+            },
+            {
+                "label": "Lift Adjust",
+                "value": "Camera_Lift_Adjust",
+                "type": "str"
+            },
+            {
+                "label": "Gain Adjust",
+                "value": "Camera_Gain_Adjust",
+                "type": "str"
             }
         ],
         "payload": "",
@@ -3801,7 +3816,7 @@
         "type": "function",
         "z": "f0af4b55ee1008be",
         "name": "ui_control",
-        "func": "let all = [\n\"Gimbal_Angle_Control\", \n\"Gimbal_Display\", \n\"Gimbal_Reset\", \n\"Gimbal_Joystick\", \n\"Gimbal_Save_Preset\", \n\"Gimbal_Change_Presets\",\n\"Gimbal_Presets\",\n\"Gimbal_Preset_Slider\"\n]\nlet show = msg.payload;\nlet hide = all.filter( group => !show.includes(group))\n\nlet data = {   \"group\": {\n        \"hide\": hide, \n        \"show\": show, \n    }\n}\nmsg.payload = data;\nreturn msg;",
+        "func": "let all = [\n\"Gimbal_Angle_Control\", \n\"Gimbal_Display\", \n\"Gimbal_Reset\", \n\"Gimbal_Joystick\", \n\"Gimbal_Save_Preset\", \n\"Gimbal_Change_Presets\",\n\"Gimbal_Presets\",\n\"Gimbal_Preset_Slider\",\n\"Camera_Camera_Setup\",\n\"Camera_Lift_Adjust\",\n\"Camera_Gain_Adjust\"\n\n]\nlet show = msg.payload;\nlet hide = all.filter( group => !show.includes(group))\n\nlet data = {   \"group\": {\n        \"hide\": hide, \n        \"show\": show, \n    }\n}\nmsg.payload = data;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
