@@ -14,6 +14,20 @@
         "info": ""
     },
     {
+        "id": "3078f533f70dc67d",
+        "type": "tab",
+        "label": "Camera",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "850922586005cb85",
+        "type": "tab",
+        "label": "Test",
+        "disabled": true,
+        "info": ""
+    },
+    {
         "id": "6cb7de50.141fb",
         "type": "subflow",
         "name": "Lift Adjust",
@@ -907,6 +921,90 @@
         ]
     },
     {
+        "id": "483d2f3147ffd676",
+        "type": "subflow",
+        "name": "Lift Adjust (4)",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "0227f8d8e7818c90"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1760,
+                "y": 340,
+                "wires": [
+                    {
+                        "id": "92ac91a856bf47fc",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "e829f096ddbb477a",
+        "type": "subflow",
+        "name": "Gain Adjust (4)",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 260,
+                "y": 500,
+                "wires": [
+                    {
+                        "id": "ae1df301e9eaf663"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1760,
+                "y": 440,
+                "wires": [
+                    {
+                        "id": "2db12b44b0366933",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "8b836990b5f13c05",
+        "type": "subflow",
+        "name": "Subflow 2 (3)",
+        "info": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": []
+            }
+        ],
+        "out": [
+            {
+                "x": 1020,
+                "y": 200,
+                "wires": []
+            }
+        ]
+    },
+    {
         "id": "55cac3c5.12e89c",
         "type": "ui_base",
         "theme": {
@@ -1353,7 +1451,7 @@
     {
         "id": "ab4ba91756a16fdf",
         "type": "serial-port",
-        "serialport": "COM4",
+        "serialport": "COM5",
         "serialbaud": "57600",
         "databits": "8",
         "parity": "none",
@@ -1432,6 +1530,93 @@
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "84d685ceddc5b36a",
+        "type": "serial-port",
+        "z": "3078f533f70dc67d",
+        "serialport": "/dev/tty.usbmodem103057901",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "C",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "0",
+        "bin": "false",
+        "out": "time",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "dd355aa056255e15",
+        "type": "ui_tab",
+        "name": "Test",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7b4d019896920d03",
+        "type": "ui_group",
+        "name": "Contrast",
+        "tab": "dd355aa056255e15",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "17eb5ef17e424ca8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "d4ffd462.f30fb8",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "97f06a37227e5ed5",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "d4ffd462.f30fb8",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b8ee6a2ac8077816",
+        "type": "ui_group",
+        "z": "483d2f3147ffd676",
+        "name": "Lift Adjust",
+        "tab": "f6783245.9294e8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "dd085b5c9a836709",
+        "type": "serial-port",
+        "serialport": "/dev/tty.usbmodem103057901",
+        "serialbaud": "57600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
     },
     {
         "id": "a9e94c94.4a6fa",
@@ -3024,7 +3209,7 @@
         "order": 1,
         "width": 15,
         "height": 1,
-        "format": "<div class=\"slidecontainer preset_contain\">\n    <div id=\"label_container\">\n        <div id=\"label_1\"></div>\n        <div id=\"label_2\"></div>    \n    </div>\n    <div id=\"preset_slider_container\">\n        <input type=\"range\" min=\"0\" max=\"100\" class=\"slider\" step=\"0.022\" value=\"0\" id=\"preset_range\">\n    </div>\n</div>\n<script>\nvar presetS = scope;\nvar presetSlider = document.getElementById(\"preset_range\");\nvar label_1 = document.getElementById(\"label_1\");\nvar label_2 = document.getElementById(\"label_2\");\nvar values;\nvar slider_mark;\nvar message = {\n    yaw: \"\",\n    yaw_speed: \"\",\n    yaw_accel: \"\",\n    pitch: \"\",\n    pitch_speed: \"\",\n    pitch_accel: \"\",\n    roll: \"\",\n    roll_speed: \"\",\n    roll_accel: \"\", \n};\n\n(function(scope){\n  scope.$watch('msg.payload', \n  function(data){\n    //console.log(data);\n    //console.log(scope);\n    if(scope.msg && scope.msg.topic === \"preset_slider\" && data.first && data.second){\n        values = data;\n        slider_mark = presetSlider.value;\n        label_1.innerHTML = scope.msg.payload.first.name;\n        label_2.innerHTML = scope.msg.payload.second.name;\n        presetSlider.value = \"0\";    \n        \n        \n        if(scope.msg.selected === scope.msg.payload.first.name){\n            presetSlider.value = \"0\";    \n        }else if(scope.msg.selected === scope.msg.payload.second.name){\n             presetSlider.value = \"100000\"; \n        }\n       \n    }else if(scope.msg && scope.msg.topic === \"reset_labels\"){\n        values = undefined;\n        label_1.innerHTML = \"\";\n        label_2.innerHTML = \"\";  \n    }else if(scope.msg && scope.msg.topic === \"preset_slider_value\"){\n        values = scope.msg.data;\n        slider_mark = scope.msg.slider_value;\n        label_1.innerHTML = scope.msg.data.first.name;\n        label_2.innerHTML = scope.msg.data.second.name;\n    }\n  })\n})(scope);\n\n\nvar pageAccessedByReload1 = (\n(window.performance.navigation && window.performance.navigation.type === 1) ||\nwindow.performance\n.getEntriesByType('navigation')\n.map((nav) => nav.type)\n.includes('reload')\n);\n\n\n\nif(pageAccessedByReload1){\nsetTimeout(function() {\n    if(values){\n        label_1.innerHTML = values.first.name;\n        label_2.innerHTML = values.second.name;\n        \n    }\n    if(slider_mark){presetSlider.value = slider_mark}\n}, 50);\n}\n\n\n\n\n\nwindow.addEventListener('hashchange', function(){\n    if(values){\n        label_1.innerHTML = values.first.name;\n        label_2.innerHTML = values.second.name;\n        presetSlider.value = slider_mark\n    }\n    if(slider_mark){presetSlider.value = slider_mark}\n})\n\n\n\n\n\n/*presetSlider.onchange = function() {\n    if(values){\n        sendPresetMessage()\n    }\n};*/\n\npresetSlider.oninput = function() {\nif(values){\n    var ratio = this.value / (this.max - this.min);\n    message.yaw = (ratio * (values.second.yaw - values.first.yaw) + values.first.yaw);\n    message.pitch = (ratio * (values.second.pitch - values.first.pitch) + values.first.pitch);\n    message.roll = (ratio * (values.second.roll - values.first.roll) + values.first.roll);\n    message.yaw_speed = (ratio * (values.second.yaw_speed - values.first.yaw_speed) + values.first.yaw_speed);\n    message.pitch_speed = (ratio * (values.second.pitch_speed - values.first.pitch_speed) + values.first.pitch_speed);\n    message.roll_speed = (ratio * (values.second.roll_speed - values.first.roll_speed) + values.first.roll_speed);\n    message.yaw_accel = ratio * (values.second.yaw_accel - values.first.yaw_accel) + values.first.yaw_accel;\n    message.pitch_accel = ratio * (values.second.pitch_accel - values.first.pitch_accel) + values.first.pitch_accel;\n    message.roll_accel = ratio * (values.second.roll_accel - values.first.roll_accel) + values.first.roll_accel;\n    console.log(message.yaw)\n    //sendPresetMessage()\n}\n};\n\n\nfunction sendPresetMessage(){\npresetS.send({\n    topic: \"preset_slider_value\", \n    payload: message,\n    data: values,\n    slider_value:  presetSlider.value,\n});\n};\n    \n</script>\n\n\n\n",
+        "format": "<div class=\"slidecontainer preset_contain\">\n    <div id=\"label_container\">\n        <div id=\"label_1\"></div>\n        <div id=\"label_2\"></div>    \n    </div>\n    <div id=\"preset_slider_container\">\n        <input type=\"range\" min=\"0\" max=\"100\" class=\"slider\" step=\"0.022\" value=\"0\" id=\"preset_range\">\n    </div>\n</div>\n<script>\nvar presetS = scope;\nvar presetSlider = document.getElementById(\"preset_range\");\nvar label_1 = document.getElementById(\"label_1\");\nvar label_2 = document.getElementById(\"label_2\");\nvar values;\nvar slider_mark;\nvar message = {\n    yaw: \"\",\n    yaw_speed: \"\",\n    yaw_accel: \"\",\n    pitch: \"\",\n    pitch_speed: \"\",\n    pitch_accel: \"\",\n    roll: \"\",\n    roll_speed: \"\",\n    roll_accel: \"\", \n};\n\n(function(scope){\n  scope.$watch('msg.payload', \n  function(data){\n    //console.log(data);\n    //console.log(scope);\n    if(scope.msg && scope.msg.topic === \"preset_slider\" && data.first && data.second){\n        values = data;\n        slider_mark = presetSlider.value;\n        label_1.innerHTML = scope.msg.payload.first.name;\n        label_2.innerHTML = scope.msg.payload.second.name;\n        presetSlider.value = \"0\";    \n        \n        \n        if(scope.msg.selected === scope.msg.payload.first.name){\n            presetSlider.value = \"0\";    \n        }else if(scope.msg.selected === scope.msg.payload.second.name){\n             presetSlider.value = \"100000\"; \n        }\n       \n    }else if(scope.msg && scope.msg.topic === \"reset_labels\"){\n        values = undefined;\n        label_1.innerHTML = \"\";\n        label_2.innerHTML = \"\";  \n    }else if(scope.msg && scope.msg.topic === \"preset_slider_value\"){\n        values = scope.msg.data;\n        slider_mark = scope.msg.slider_value;\n        label_1.innerHTML = scope.msg.data.first.name;\n        label_2.innerHTML = scope.msg.data.second.name;\n    }\n  })\n})(scope);\n\n\nvar pageAccessedByReload1 = (\n(window.performance.navigation && window.performance.navigation.type === 1) ||\nwindow.performance\n.getEntriesByType('navigation')\n.map((nav) => nav.type)\n.includes('reload')\n);\n\n\n\nif(pageAccessedByReload1){\nsetTimeout(function() {\n    if(values){\n        label_1.innerHTML = values.first.name;\n        label_2.innerHTML = values.second.name;\n        \n    }\n    if(slider_mark){presetSlider.value = slider_mark}\n}, 50);\n}\n\n\n\n\n\nwindow.addEventListener('hashchange', function(){\n    if(values){\n        label_1.innerHTML = values.first.name;\n        label_2.innerHTML = values.second.name;\n        presetSlider.value = slider_mark\n    }\n    if(slider_mark){presetSlider.value = slider_mark}\n})\n\n\n\n\n\n/*presetSlider.onchange = function() {\n    if(values){\n        sendPresetMessage()\n    }\n};*/\n\npresetSlider.oninput = function() {\nif(values){\n    var ratio = this.value / (this.max - this.min);\n    message.yaw = (ratio * (values.second.yaw - values.first.yaw) + values.first.yaw);\n    message.pitch = (ratio * (values.second.pitch - values.first.pitch) + values.first.pitch);\n    message.roll = (ratio * (values.second.roll - values.first.roll) + values.first.roll);\n    message.yaw_speed = (ratio * (values.second.yaw_speed - values.first.yaw_speed) + values.first.yaw_speed);\n    message.pitch_speed = (ratio * (values.second.pitch_speed - values.first.pitch_speed) + values.first.pitch_speed);\n    message.roll_speed = (ratio * (values.second.roll_speed - values.first.roll_speed) + values.first.roll_speed);\n    message.yaw_accel = ratio * (values.second.yaw_accel - values.first.yaw_accel) + values.first.yaw_accel;\n    message.pitch_accel = ratio * (values.second.pitch_accel - values.first.pitch_accel) + values.first.pitch_accel;\n    message.roll_accel = ratio * (values.second.roll_accel - values.first.roll_accel) + values.first.roll_accel;\n    sendPresetMessage()\n}\n};\n\n\nfunction sendPresetMessage(){\npresetS.send({\n    topic: \"preset_slider_value\", \n    payload: message,\n    data: values,\n    slider_value:  presetSlider.value,\n});\n};\n    \n</script>\n\n\n\n",
         "storeOutMessages": true,
         "fwdInMessages": false,
         "resendOnRefresh": true,
@@ -7263,6 +7448,1789 @@
         "y": 1060,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "66e1c0ecabbe9bdf",
+        "type": "ui_slider",
+        "z": "3078f533f70dc67d",
+        "name": "Focus",
+        "label": "Focus&nbsp;",
+        "tooltip": "",
+        "group": "3014c2c4.1707ee",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "2048",
+        "step": 1,
+        "x": 710,
+        "y": 380,
+        "wires": [
+            [
+                "d9e6e1420d614bbe"
+            ]
+        ]
+    },
+    {
+        "id": "f3370fbf721fbd31",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Build LVZ  message",
+        "func": "\nvar Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\n\nvar Send   = parseInt(flow.get(\"Send\"));\nvar LVZ_ID_Data;\nvar saveID  = \"Temp\"+\"_\"+Camera+\"_\"+Type+\"_\"+Memory;\n\nvar save = flow.get(saveID)||{};\n\nvar LVZ_data_out;\nvar Din = msg.payload;\n\nif(Type == 11) {LVZ_data_out = type11mapping(msg.payload);}\nif(Type == 10) {LVZ_data_out = type10mapping(msg.payload);}\nif(Type == 2)  {LVZ_data_out = type10mapping(msg.payload);}\n//if(Send == 1)  {LVZ_data_out = sendType10(saveID);flow.set.Send = 0;}\n\nmsg.payload = buildLVZmsg(Type, Camera, LVZ_data_out )\nreturn msg;\n\n\nfunction type10mapping(IN) {\n    \n\n    \nswitch(IN.Control) {\n    \n  case \"focus\":        LVZ_ID_Data = buildLVZsingle    (1  , IN.DATA); save.focus       = IN.DATA;  break;\n    \n  case \"fstop\":        LVZ_ID_Data = buildLVZsingle    (3  , IN.DATA); save.fstop       = IN.DATA;  break;\n    \n  case \"gain\":         LVZ_ID_Data = buildLVZsingle    (31 , IN.DATA); save.gain        = IN.DATA;  break;\n  \n  case \"ISO\":          LVZ_ID_Data = buildLVZsingle    (44 , IN.DATA); save.gain        = IN.DATA;  break;\n  \n  case \"shutter\":      LVZ_ID_Data = buildLVZsingle    (41 , IN.DATA); save.gain        = IN.DATA;  break;\n    \n  case \"exposure\":     LVZ_ID_Data = buildLVZsingleLong(35 , IN.DATA); save.exposure    = IN.DATA;  break;\n    \n  case \"expMod\":       LVZ_ID_Data = buildLVZsingleLong(40 , IN.DATA); save.expMod      = IN.DATA;  break;\n   \n  case \"tallyMod\":     LVZ_ID_Data = buildLVZsingleLong(113, IN.DATA); save.tallyMod    = IN.DATA;  break;\n  \n  case \"tallyBright\":  LVZ_ID_Data = buildLVZsingleLong(110, IN.DATA); save.tallyBright = IN.DATA;  break;\n  \n  case \"WB\":           LVZ_ID_Data = buildLVZdual      (32 , IN.DATA1, IN.DATA2); \n                                                  save.WB = [IN.DATA1, IN.DATA2 ];                  break;\n  \n  case \"liftAdjust\":   LVZ_ID_Data = buildLVZliftAdjust(IN);     \n  save.liftAdjust =  { Red: IN.Red, Green: IN.Green,  Blue: IN.Blue, Luma: IN.Luma,  Colour: IN.Colour } ;    break;\n                 \n  \n  case \"gammaAdjust\":  LVZ_ID_Data = buildLVZgammaAdjust(IN.COLOR);   save.gammaAdjust = IN.COLOR;  break;\n  \n  \n  case \"gainAdjust\":   LVZ_ID_Data = buildLVZgainAdjust(IN);     \n  save.gainAdjust =  { Red: IN.Red, Green: IN.Green,  Blue: IN.Blue, Luma: IN.Luma,  Colour: IN.Colour } ;    break;\n  \n\n  \n  case \"offsetAdjust\": LVZ_ID_Data = buildLVZoffsetAdjust(IN.COLOR); save.offsetAdjust = IN.COLOR;  break; \n  \n // case \"resetColour\":  LVZ_ID_Data = resetColours();                                                break;\n  \n // case \"SendData\":     sendType10(saveID);break;\n  \n    \n  default:\n    LVZ_ID_data = [ ];\n}\n\nflow.set(saveID,save);\nreturn LVZ_ID_Data;\n}\n\nfunction type11mapping(IN) {\n    \n\n    \nswitch(IN.Control) {\n    \n  case \"focus\":        LVZ_ID_Data = buildLVZsingle    (1  , IN.DATA); save.focus       = IN.DATA;  break;\n    \n  case \"fstop\":        LVZ_ID_Data = buildLVZsingle    (3  , IN.DATA); save.fstop       = IN.DATA;  break;\n    \n  case \"gain\":         LVZ_ID_Data = buildLVZsingle    (31 , IN.DATA); save.gain        = IN.DATA;  break;\n  \n  case \"ISO\":          LVZ_ID_Data = buildLVZsingle    (44 , IN.DATA); save.gain        = IN.DATA;  break;\n  \n  case \"shutter\":      LVZ_ID_Data = buildLVZsingle    (41 , IN.DATA); save.gain        = IN.DATA;  break;\n    \n  case \"exposure\":     LVZ_ID_Data = buildLVZsingleLong(35 , IN.DATA); save.exposure    = IN.DATA;  break;\n    \n  case \"expMod\":       LVZ_ID_Data = buildLVZsingleLong(40 , IN.DATA); save.expMod      = IN.DATA;  break;\n   \n  case \"tallyMod\":     LVZ_ID_Data = buildLVZsingleLong(113, IN.DATA); save.tallyMod    = IN.DATA;  break;\n  \n  case \"tallyBright\":  LVZ_ID_Data = buildLVZsingleLong(110, IN.DATA); save.tallyBright = IN.DATA;  break;\n  \n  case \"WB\":           LVZ_ID_Data = buildLVZdual      (32 , IN.DATA1, IN.DATA2); \n                                                  save.WB = [IN.DATA1, IN.DATA2 ];                  break;\n  \n  case \"liftAdjust\":   LVZ_ID_Data = buildLVZliftAdjust(IN);     \n  save.liftAdjust =  { Red: IN.Red, Green: IN.Green,  Blue: IN.Blue, Luma: IN.Luma,  Colour: IN.Colour } ;    break;\n                 \n  \n  case \"gammaAdjust\":  LVZ_ID_Data = buildLVZgammaAdjust(IN.COLOR);   save.gammaAdjust = IN.COLOR;  break;\n  \n  \n  case \"gainAdjust\":   LVZ_ID_Data = buildLVZgainAdjust(IN);     \n  save.gainAdjust =  { Red: IN.Red, Green: IN.Green,  Blue: IN.Blue, Luma: IN.Luma,  Colour: IN.Colour } ;    break;\n  \n\n  \n  case \"offsetAdjust\": LVZ_ID_Data = buildLVZoffsetAdjust(IN.COLOR); save.offsetAdjust = IN.COLOR;  break; \n  \n // case \"resetColour\":  LVZ_ID_Data = resetColours();                                                break;\n  \n // case \"SendData\":     sendType10(saveID);break;\n  \n    \n  default:\n    LVZ_ID_data = [ ];\n}\n\nflow.set(saveID,save);\nreturn LVZ_ID_Data;\n}\n\nfunction delay(delayInms) {\n  return new Promise(resolve => {\n    setTimeout(() => {\n      resolve(2);\n    }, delayInms);\n  });\n}\n\nfunction resetColours(){\n    \n//to set USB to SDI box values to defaults    \n//old has to be updated\nvar R1  =   buildLVZliftAdjust  (\"7f7f7f7f\");\nvar R2  =   buildLVZgammaAdjust (\"7f7f7f7f\");\nvar R3  =   buildLVZgainAdjust  (\"7f7f7f20\");\nvar R4  =   buildLVZoffsetAdjust(\"7f7f7f7f\");\n//actual camera colour reset\nvar R5  =   buildLVZsingle      (147, 0);\n\nLVZ_ID_Data = Array.prototype.concat.apply([], [R1, R2, R3, R4, R5 ]);\n\n  \nreturn LVZ_ID_Data; \n\n}\nfunction sendType10(ID){\n//this sends the values on a single LVZ message. Currently handled with node RED functionality\n//sending a mesage for each parameter group and this is not used.\n//currently not in use\n    \nvar D1  = buildLVZsingle    (1  , flow.get(ID).focus);\nvar D2  = buildLVZsingle    (3  , flow.get(ID).fstop);\nvar D3  = buildLVZsingle    (31 , flow.get(ID).gain);\n    \nvar D4  = buildLVZsingleLong(35 , flow.get(ID).exposure);\n//var D5  = buildLVZsingleLong(40 , 0);//exposure mode set to manual trigger\n//var D6  = buildLVZsingleLong(113, flow.get(ID).tallyMod);\n//var D7  = buildLVZsingleLong(110, flow.get(ID).tallyBright); \n    \nvar D8  = buildLVZdual      (32 , flow.get(ID).WB[0], 0);\n    \nvar D9  =   buildLVZliftAdjust(  flow.get(ID).liftAdjust);\nvar D10 =   buildLVZgammaAdjust( flow.get(ID).gammaAdjust);\nvar D11 =   buildLVZgainAdjust(  flow.get(ID).gainAdjust);\nvar D12 =   buildLVZoffsetAdjust(flow.get(ID).offsetAdjust);\n   \n  \nLVZ_ID_Data = Array.prototype.concat.apply([], [D1, D2, D3, D4, D8, D9, D10, D11, D12 ]);\n  \nreturn LVZ_ID_Data; \n    \n}\n\n\n\nfunction buildLVZliftAdjust(Din){\n\n\n//the LVZ message data\n\nvar red   = Din.Red;\nvar green = Din.Green;\nvar blue  = Din.Blue;\nvar luma  = Din.Luma;\n\n\nvar LVZ_ID_data = buildLVZcolour(140, red, green, blue, luma);\n\nreturn LVZ_ID_data;\n}\n\n\nfunction buildLVZgammaAdjust(GMAcontrol){\n\n\n//64 gives ful +-4.0 range, often less is enough and gives beter adjustability \nvar multc = 4;//colour multiblier\nvar multl = 8;//luma multiblier\n\n//the LVZ message data\n//var DataIn  = msg.payload;\nvar red   = parseInt(\"0x\"+GMAcontrol.slice(0, 2));\nvar green = parseInt(\"0x\"+GMAcontrol.slice(2, 4));\nvar blue  = parseInt(\"0x\"+GMAcontrol.slice(4, 6));\nvar luma  = parseInt(\"0x\"+GMAcontrol.slice(6, 8));\n\n\nred   = (multc * (red   - 127 ))||0;\ngreen = (multc * (green - 127 ))||0;\nblue  = (multc * (blue  - 127 ))||0;\nluma  = (multl * (127   - luma))||0;\n\nvar LVZ_ID_data = buildLVZcolour(141, red, green, blue, luma);\n\nreturn LVZ_ID_data;\n}\n\n\nfunction buildLVZgainAdjust(Din){\n\n//the LVZ message data\n\nvar red   = Din.Red;\nvar green = Din.Green;\nvar blue  = Din.Blue;\nvar luma  = Din.Luma;\n\n\nvar LVZ_ID_data = buildLVZcolour(142, red, green, blue, luma);\n\nreturn LVZ_ID_data;\n}\n\n\nfunction buildLVZoffsetAdjust(OAcontrol){\n\n//128 gives ful +-8.0 range, often less is enough and gives beter adjustability \nvar multc = 8;//colour multiblier\nvar multl = 16;//luma multiblier\n\n//the LVZ message data\n//var DataIn  = msg.payload;\nvar red   = parseInt(\"0x\"+OAcontrol.slice(0, 2));\nvar green = parseInt(\"0x\"+OAcontrol.slice(2, 4));\nvar blue  = parseInt(\"0x\"+OAcontrol.slice(4, 6));\nvar luma  = parseInt(\"0x\"+OAcontrol.slice(6, 8));\n\n\nred   = (multc * (red   - 127 ))||0;\ngreen = (multc * (green - 127 ))||0;\nblue  = (multc * (blue  - 127 ))||0;\nluma  = (multl * (127   - luma))||0;\n\nvar LVZ_ID_data = buildLVZcolour(143, red, green, blue, luma);\n\nreturn LVZ_ID_data;\n}\n\n\n\nfunction buildLVZmsg(Type, Camera, LVZ_ID_data) {\n    \n\nvar Counter  = context.get('Counter')||0;\nif (Counter >= 127) {Counter = 0;} else {Counter++;}\ncontext.set('Counter',Counter);\n\nvar LVZheader   = [0xFF, 0xFF, 0xFF,Camera ,Type ,Counter ];\n\n//combine header and data\nvar LVZdata  = LVZheader.concat(LVZ_ID_data);\n\n//calculate checksum\nvar i;\nvar Cksm = 0;\nfor (i = 3; i < LVZdata.length; i++) { Cksm = (Cksm + LVZdata[i])& 0xFFFF; }\nvar LVZchecksum = [0x00, (Cksm & 0xFF), ((Cksm >> 8) & 0xFF)];\n\n//the complete LVZ message\nvar LVZmsg    = LVZdata.concat(LVZchecksum);\n\nreturn Buffer.from(LVZmsg);\n \n}\n\n\nfunction buildLVZsingle(LVZ_ID, Data) {\n\nvar DataL   =  (Data &       0xFF)||0;\nvar DataH   = ((Data >> 8) & 0xFF)||0;\n\nvar LVZ_ID_data = [ LVZ_ID , DataL, DataH];\n\nreturn LVZ_ID_data;\n \n}\n\nfunction buildLVZsingleLong(LVZ_ID, Data) {\n\nvar Data0   =  (Data &        0xFF)||0;\nvar Data1   = ((Data >> 8)  & 0xFF)||0;\nvar Data2   = ((Data >> 16) & 0xFF)||0;\nvar Data3   = ((Data >> 24) & 0xFF)||0;\n\nvar LVZ_ID_data = [ LVZ_ID , Data0, Data1, 254, Data2, Data3];\n\nreturn LVZ_ID_data;\n \n}\n\nfunction buildLVZdual(LVZ_ID, Data_1, Data_2) {\n\nvar Data0   =  (Data_1 &        0xFF)||0;\nvar Data1   = ((Data_1 >> 8)  & 0xFF)||0;\nvar Data2   =  (Data_2 &        0xFF)||0;\nvar Data3   = ((Data_2 >> 8)  & 0xFF)||0;\n\nvar LVZ_ID_data = [ LVZ_ID , Data0, Data1, 254, Data2, Data3];\n\nreturn LVZ_ID_data;\n \n}\n\nfunction buildLVZcolour(LVZ_ID, red, green, blue, luma) {\n\nvar redH   = ((red   >> 8) & 0xFF)||0;\nvar redL   =  (red   &       0xFF)||0;\nvar greenH = ((green >> 8) & 0xFF)||0;\nvar greenL =  (green &       0xFF)||0;\nvar blueH  = ((blue  >> 8) & 0xFF)||0;\nvar blueL  =  (blue  &       0xFF)||0;\nvar lumaH  = ((luma  >> 8) & 0xFF)||0;\nvar lumaL  =  (luma  &       0xFF)||0;\n\nvar LVZ_ID_data = [ LVZ_ID , redL, redH, 254, greenL, greenH, 254, blueL, blueH, 254, lumaL, lumaH];\n\nreturn LVZ_ID_data;\n \n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 460,
+        "wires": [
+            [
+                "2f5804dde877d5b4"
+            ]
+        ]
+    },
+    {
+        "id": "d9e6e1420d614bbe",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "P4k Focus",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nvar Data  = msg.payload;\n\nmsg.payload = { Control: \"focus\", DATA: Data};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 380,
+        "wires": [
+            [
+                "f3370fbf721fbd31",
+                "eeb4f69613c9eb30"
+            ]
+        ]
+    },
+    {
+        "id": "6d39d7d099a6249a",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Camera & Type",
+        "func": "\nvar Camera = msg.payload.camera||flow.get(\"Camera\");\nvar Type   = msg.payload.type  ||flow.get(\"Type\");\nvar Memory = msg.payload.memory||flow.get(\"Memory\");\nvar saveID = (\"Temp\"+\"_\"+Camera+\"_\"+Type+\"_\"+Memory)||flow.get(\"MemID\"); \n\nflow.set(\"Camera\", Camera);\nflow.set(\"Type\",   Type);\nflow.set(\"Memory\", Memory);\nflow.set(\"MemID\",  saveID);\n\nmsg.payload = { camera: Camera, type: Type, memory: Memory, MemID: saveID, Control: \"setColour\"};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 460,
+        "wires": [
+            [
+                "d174384852669e3d",
+                "0d6aeb26fc349a70",
+                "60d9810fb3dbe1a5",
+                "0b7c5fdc712670fe",
+                "9966b0b38c05d5f4"
+            ]
+        ]
+    },
+    {
+        "id": "fe46145db5d82bea",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "P4k ISO",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nData  = msg.payload;\n\nmsg.payload = { Control: \"ISO\", DATA: Data};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 520,
+        "wires": [
+            [
+                "f3370fbf721fbd31"
+            ]
+        ]
+    },
+    {
+        "id": "d1926113eef3705c",
+        "type": "ui_slider",
+        "z": "3078f533f70dc67d",
+        "name": "Fstop",
+        "label": "F-stop",
+        "tooltip": "",
+        "group": "3014c2c4.1707ee",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "20000",
+        "step": "10",
+        "x": 710,
+        "y": 420,
+        "wires": [
+            [
+                "591b6fa6ed45c91d"
+            ]
+        ]
+    },
+    {
+        "id": "591b6fa6ed45c91d",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "P4k F-stop",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nvar Fstop  = msg.payload;\n\nmsg.payload = { Control: \"fstop\", DATA: toFstop(Fstop)};\n\nreturn msg;\n\n\nfunction toFstop(Fstop){\n    \n //P4k + EFS 10-18mm + BMPCC speedbooster available f-numbers    \nvar FstopValues   = [340, 350, 360, 370, 380, 400, 420, 450, 460, 480, 500, 520, 540, 560, 590, 620, 640, 670, 700, 730, 760, 800, 830, 870, 910, 950, 970 , 1000, 1050, 1100, 1150, 1200, 1300, 1400, 1450, 1500, 1550, 1600, 1620];\n    \n// Sppedbooster + Canon 50 1.4 SMT: 1.3; 1.4; 1.5; 1.7; 1.8; 2.0; 2.2; 2.4; 2.6; 2.8; 3.2; 3.5; 3.7; 4.0; 4.5; 4.8; 5.2; 5.6; 6.2; 6.7; 7.3; 8.0; 8.7; 9.5; 10; 11; 12; 14; 15; 16 \n// DataOut = (Math. sqrt(Math.pow(2, (msg.payload.DATA/2048)))).toFixed(1);\n\n//find closest available WB to current slider position\nvar idx = 0; \nvar distance = 1000000;\n \n var i;\n  for ( i = 0; i < FstopValues.length; i++)\n  {\n    var d = Math.abs(FstopValues[i] - Fstop/10);\n    if (d < distance)\n    {\n      idx = i;\n      distance = d;\n    }\n  }\n  return FstopValues[idx];\n    \n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 420,
+        "wires": [
+            [
+                "f3370fbf721fbd31",
+                "eeb4f69613c9eb30"
+            ]
+        ]
+    },
+    {
+        "id": "27b69fe6c8d7c141",
+        "type": "ui_slider",
+        "z": "3078f533f70dc67d",
+        "name": "WB",
+        "label": "WB &emsp; &ensp; ",
+        "tooltip": "",
+        "group": "3014c2c4.1707ee",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "WB",
+        "topicType": "str",
+        "min": "2500",
+        "max": "10000",
+        "step": "1",
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "bdbfe49afc7a6af6"
+            ]
+        ]
+    },
+    {
+        "id": "b6eb27c888e0d45a",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "BMMSC WB",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nvar Data1  = msg.payload.WB;\nvar Data2  = msg.payload.Tint;\n\n//BMD WB message must include tilt, however BMMSC does not use tilt so set to 0\n//var Data2 = 20;//msg.payload.tint;\n\nmsg.payload = { Control: \"WB\", DATA1: Data1 , DATA2: Data2}; //toWB(Data1)\n\nreturn msg;\n\n\n\nfunction toWB(WBin){\n    \n //BMMSC available WB values    \n var WBvalues   = [2500, 2800, 3000, 3200, 3400, 3600, 4000, 4500, 4800, 5000, 5200, 5400, 5600, 6000, 6500, 7000, 7500, 8000 ];   \n    \n\n\n//find closest available WB to current slider position\nvar idx = 0; \nvar distance = 1000;\n \n var i;\n  for ( i = 0; i < WBvalues.length; i++)\n  {\n    var d = Math.abs(WBvalues[i] - WBin);\n    if (d < distance)\n    {\n      idx = i;\n      distance = d;\n    }\n  }\n  return WBvalues[idx];\n    \n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 600,
+        "wires": [
+            [
+                "f3370fbf721fbd31",
+                "eeb4f69613c9eb30"
+            ]
+        ]
+    },
+    {
+        "id": "1374b64ed15d7b50",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "BMMSC Exp.",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nvar Data  = msg.payload;\n\nmsg.payload = { Control: \"exposure\", DATA: Data};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 700,
+        "wires": [
+            [
+                "f3370fbf721fbd31"
+            ]
+        ]
+    },
+    {
+        "id": "80d38590bd79c761",
+        "type": "ui_dropdown",
+        "z": "3078f533f70dc67d",
+        "name": "ISO",
+        "label": "ISO &emsp; &nbsp; &emsp; &emsp;&nbsp;&nbsp;",
+        "tooltip": "",
+        "place": "Select ISO",
+        "group": "3014c2c4.1707ee",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "100",
+                "value": "100",
+                "type": "str"
+            },
+            {
+                "label": "125",
+                "value": "125",
+                "type": "str"
+            },
+            {
+                "label": "160",
+                "value": "160",
+                "type": "str"
+            },
+            {
+                "label": "200",
+                "value": "200",
+                "type": "str"
+            },
+            {
+                "label": "250",
+                "value": "250",
+                "type": "str"
+            },
+            {
+                "label": "320",
+                "value": "320",
+                "type": "str"
+            },
+            {
+                "label": "400",
+                "value": "400",
+                "type": "str"
+            },
+            {
+                "label": "500",
+                "value": "500",
+                "type": "str"
+            },
+            {
+                "label": "640",
+                "value": "640",
+                "type": "str"
+            },
+            {
+                "label": "800",
+                "value": "800",
+                "type": "str"
+            },
+            {
+                "label": "1000",
+                "value": "1000",
+                "type": "str"
+            },
+            {
+                "label": "1250",
+                "value": "1250",
+                "type": "str"
+            },
+            {
+                "label": "1600",
+                "value": "1600",
+                "type": "str"
+            },
+            {
+                "label": "2000",
+                "value": "2000",
+                "type": "str"
+            },
+            {
+                "label": "2500",
+                "value": "2500",
+                "type": "str"
+            },
+            {
+                "label": "3200",
+                "value": "3200",
+                "type": "str"
+            },
+            {
+                "label": "4000",
+                "value": "4000",
+                "type": "str"
+            },
+            {
+                "label": "5000",
+                "value": "5000",
+                "type": "str"
+            },
+            {
+                "label": "6400",
+                "value": "6400",
+                "type": "str"
+            },
+            {
+                "label": "8000",
+                "value": "8000",
+                "type": "str"
+            },
+            {
+                "label": "10000",
+                "value": "10000",
+                "type": "str"
+            },
+            {
+                "label": "12800",
+                "value": "12800",
+                "type": "str"
+            },
+            {
+                "label": "16000",
+                "value": "16000",
+                "type": "str"
+            },
+            {
+                "label": "20000",
+                "value": "20000",
+                "type": "str"
+            },
+            {
+                "label": "25600",
+                "value": "25600",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 710,
+        "y": 520,
+        "wires": [
+            [
+                "fe46145db5d82bea"
+            ]
+        ]
+    },
+    {
+        "id": "fb817c121f9fa17d",
+        "type": "ui_dropdown",
+        "z": "3078f533f70dc67d",
+        "name": "Exposure",
+        "label": "Exposure   &nbsp; &nbsp;&nbsp;",
+        "tooltip": "",
+        "place": "Select Exp.",
+        "group": "3014c2c4.1707ee",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "1/384",
+                "value": "384",
+                "type": "str"
+            },
+            {
+                "label": "1/288",
+                "value": "288",
+                "type": "str"
+            },
+            {
+                "label": "1/230",
+                "value": "230",
+                "type": "str"
+            },
+            {
+                "label": "1/192",
+                "value": "192",
+                "type": "str"
+            },
+            {
+                "label": "1/144",
+                "value": "144",
+                "type": "str"
+            },
+            {
+                "label": "1/120",
+                "value": "120",
+                "type": "str"
+            },
+            {
+                "label": "1/115",
+                "value": "115",
+                "type": "str"
+            },
+            {
+                "label": "1/96",
+                "value": "96",
+                "type": "str"
+            },
+            {
+                "label": "1/80",
+                "value": "80",
+                "type": "str"
+            },
+            {
+                "label": "1/72",
+                "value": "72",
+                "type": "str"
+            },
+            {
+                "label": "1/60",
+                "value": "60",
+                "type": "str"
+            },
+            {
+                "label": "1/58",
+                "value": "58",
+                "type": "str"
+            },
+            {
+                "label": "1/50",
+                "value": "50",
+                "type": "str"
+            },
+            {
+                "label": "1/48",
+                "value": "48",
+                "type": "str"
+            },
+            {
+                "label": "1/40",
+                "value": "41",
+                "type": "str"
+            },
+            {
+                "label": "1/32",
+                "value": "32",
+                "type": "str"
+            },
+            {
+                "label": "1/27",
+                "value": "27",
+                "type": "str"
+            },
+            {
+                "label": "1/24",
+                "value": "24",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 720,
+        "y": 700,
+        "wires": [
+            [
+                "1374b64ed15d7b50"
+            ]
+        ]
+    },
+    {
+        "id": "1c19a35fa60b7be2",
+        "type": "ui_text",
+        "z": "3078f533f70dc67d",
+        "group": "3014c2c4.1707ee",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Last adjusted value",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1530,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "eeb4f69613c9eb30",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Pick last adjusted",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nvar DataOut;\n\nswitch(msg.payload.Control) {\n    \n  case \"focus\":        DataOut = (msg.payload.DATA/2048).toFixed(3);                                 break;\n    \n  //case \"fstop\":        DataOut = (Math. sqrt(Math.pow(2, (msg.payload.DATA/2048.0)))).toFixed(1);    break; \n  \n  case \"fstop\":        DataOut = (msg.payload.DATA/100).toFixed(1);    break; \n    \n  case \"WB\":           DataOut = msg.payload.DATA1;                     break;\n  \n\n    \n  default:\n    \n}\nmsg.payload = DataOut;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 380,
+        "wires": [
+            [
+                "1c19a35fa60b7be2"
+            ]
+        ]
+    },
+    {
+        "id": "b5942157325fbc47",
+        "type": "join",
+        "z": "3078f533f70dc67d",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "6d39d7d099a6249a",
+                "47c2fe1b68332b18"
+            ]
+        ]
+    },
+    {
+        "id": "6f7ef1219871ed56",
+        "type": "ui_dropdown",
+        "z": "3078f533f70dc67d",
+        "name": "Camera Type",
+        "label": "Camera Type&nbsp;&nbsp;",
+        "tooltip": "",
+        "place": "Select Type",
+        "group": "3014c2c4.1707ee",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Micro",
+                "value": "10",
+                "type": "str"
+            },
+            {
+                "label": "BMD old",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "Pocket",
+                "value": "11",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "type",
+        "topicType": "str",
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "b5942157325fbc47"
+            ]
+        ]
+    },
+    {
+        "id": "ad2f39282a8d459c",
+        "type": "ui_dropdown",
+        "z": "3078f533f70dc67d",
+        "name": "Camera Number",
+        "label": "Camera Number",
+        "tooltip": "",
+        "place": "Select Camera",
+        "group": "3014c2c4.1707ee",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Send all cameras",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Cam1",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "Cam2",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "Cam3",
+                "value": "3",
+                "type": "str"
+            },
+            {
+                "label": "Cam4",
+                "value": "4",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "camera",
+        "topicType": "str",
+        "x": 280,
+        "y": 280,
+        "wires": [
+            [
+                "b5942157325fbc47"
+            ]
+        ]
+    },
+    {
+        "id": "bc97f65d0164936b",
+        "type": "ui_dropdown",
+        "z": "3078f533f70dc67d",
+        "name": "Memory Number",
+        "label": "Memory Number",
+        "tooltip": "",
+        "place": "Select Memory",
+        "group": "3014c2c4.1707ee",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Mem_1",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Mem_2",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "Mem_3",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "Mem_4",
+                "value": "3",
+                "type": "str"
+            },
+            {
+                "label": "Mem_5",
+                "value": "4",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "memory",
+        "topicType": "str",
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "b5942157325fbc47"
+            ]
+        ]
+    },
+    {
+        "id": "2f5804dde877d5b4",
+        "type": "serial out",
+        "z": "3078f533f70dc67d",
+        "name": "LVZ serial",
+        "serial": "ab4ba91756a16fdf",
+        "x": 1500,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d174384852669e3d",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Load F-stop",
+        "func": "var saveID = msg.payload.MemID||parseInt(flow.get(\"MemID\"));\nvar Fstop;\n\n\nif( flow.get(saveID) !== undefined ) {\n    if( flow.get(saveID).fstop !== undefined ) { \n     Fstop   = flow.get(saveID).fstop;   \n    } else { Fstop   = 0; }\n  \n} else { Fstop   = 0; }\n\nmsg.payload = Fstop;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "d1926113eef3705c"
+            ]
+        ]
+    },
+    {
+        "id": "60d9810fb3dbe1a5",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Load Gain",
+        "func": "var saveID = msg.payload.MemID||parseInt(flow.get(\"MemID\"));\nvar Gain;\n\n\nif( flow.get(saveID) !== undefined ) {\n    if( flow.get(saveID).gain !== undefined ) { \n     Gain   = flow.get(saveID).gain;   \n    } else { Gain   = 0; }\n  \n} else { Gain   = 0; }\n\nmsg.payload = Gain;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 520,
+        "wires": [
+            [
+                "80d38590bd79c761"
+            ]
+        ]
+    },
+    {
+        "id": "0d6aeb26fc349a70",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Load Focus",
+        "func": "var saveID = msg.payload.MemID||parseInt(flow.get(\"MemID\"));\nvar Focus;\n\nif( flow.get(saveID) !== undefined ) {\n    if( flow.get(saveID).focus !== undefined ) { \n     Focus   = flow.get(saveID).focus;   \n    } else { Focus   = 0; }\n  \n} else { Focus   = 0; }\n\nmsg.payload = Focus;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "66e1c0ecabbe9bdf"
+            ]
+        ]
+    },
+    {
+        "id": "0b7c5fdc712670fe",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Load WB",
+        "func": "var saveID = msg.payload.MemID||parseInt(flow.get(\"MemID\"));\nvar WB;\n\n\n//if memory position has not been created yet, use default value\n//the memory position will be greated by \"build LVZ mesage\" function\nif( flow.get(saveID) !== undefined ) {\n    if( flow.get(saveID).WB !== undefined ) { \n     WB   = flow.get(saveID).WB;   \n    } else { WB   = 2500; }\n  \n} else { WB   = 2500; }\n\nmsg.payload = WB;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 560,
+        "wires": [
+            [
+                "27b69fe6c8d7c141"
+            ]
+        ]
+    },
+    {
+        "id": "9966b0b38c05d5f4",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Load Exp.",
+        "func": "var saveID = msg.payload.MemID||parseInt(flow.get(\"MemID\"));\nvar Exposure;\n\n\n//if memory position has not been created yet, use default value\n//the momory position will be greated by \"build LVZ mesage\" function\nif( flow.get(saveID) !== undefined ) {\n    if( flow.get(saveID).exposure !== undefined ) { \n     Exposure   = flow.get(saveID).exposure;   \n    } else { Exposure   = 0; }\n  \n} else { Exposure   = 0; }\n\nmsg.payload = Exposure;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "fb817c121f9fa17d",
+                "5e87028024babddc"
+            ]
+        ]
+    },
+    {
+        "id": "9832d147aa292121",
+        "type": "serial in",
+        "z": "3078f533f70dc67d",
+        "name": "",
+        "serial": "ab4ba91756a16fdf",
+        "x": 1280,
+        "y": 780,
+        "wires": [
+            [
+                "4b42cec0382f5739"
+            ]
+        ]
+    },
+    {
+        "id": "4b42cec0382f5739",
+        "type": "ui_text",
+        "z": "3078f533f70dc67d",
+        "group": "16848fb.06e187",
+        "order": 0,
+        "width": "5",
+        "height": "8",
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1570,
+        "y": 780,
+        "wires": [],
+        "inputLabels": [
+            "a"
+        ]
+    },
+    {
+        "id": "47c2fe1b68332b18",
+        "type": "function",
+        "z": "3078f533f70dc67d",
+        "name": "Send Mem",
+        "func": "var Camera = msg.payload.camera||parseInt(flow.get(\"Camera\"));\nvar Type   = msg.payload.type  ||parseInt(flow.get(\"Type\"));\nvar Memory = msg.payload.memory||parseInt(flow.get(\"Memory\"));\nvar Data  = msg.payload;\n\nmsg.payload = { Control: \"SendData\"};\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 970,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa93d51a578034fc",
+        "type": "ui_slider",
+        "z": "850922586005cb85",
+        "name": "Contrast",
+        "label": "Contrast",
+        "tooltip": "",
+        "group": "7b4d019896920d03",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "contrast",
+        "topicType": "str",
+        "min": 0,
+        "max": "4096",
+        "step": 1,
+        "x": 500,
+        "y": 580,
+        "wires": [
+            [
+                "e9652e159f3860b5"
+            ]
+        ]
+    },
+    {
+        "id": "59efca127d733d5d",
+        "type": "ui_slider",
+        "z": "850922586005cb85",
+        "name": "pivot",
+        "label": "Pivot",
+        "tooltip": "",
+        "group": "7b4d019896920d03",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "pivot",
+        "topicType": "str",
+        "min": 0,
+        "max": "2048",
+        "step": 1,
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "e9652e159f3860b5"
+            ]
+        ]
+    },
+    {
+        "id": "34688b37189be39a",
+        "type": "ui_text",
+        "z": "850922586005cb85",
+        "group": "d4ffd462.f30fb8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1050,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "1e5467efd5c7ca87",
+        "type": "ui_button",
+        "z": "850922586005cb85",
+        "name": "Reset",
+        "group": "7b4d019896920d03",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "Reset",
+        "topicType": "str",
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "e9652e159f3860b5"
+            ]
+        ]
+    },
+    {
+        "id": "20e218ab9fbe17a4",
+        "type": "ui_slider",
+        "z": "483d2f3147ffd676",
+        "name": "Luma",
+        "label": "Luma",
+        "tooltip": "",
+        "group": "b8ee6a2ac8077816",
+        "order": 3,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "outs": "all",
+        "topic": "Luma",
+        "topicType": "str",
+        "min": "-4095",
+        "max": "4096",
+        "step": 1,
+        "x": 870,
+        "y": 380,
+        "wires": [
+            [
+                "a1865210651241dd"
+            ]
+        ]
+    },
+    {
+        "id": "92ac91a856bf47fc",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "Lift Adjust",
+        "func": "\nvar Color  = msg.payload.Color ||\"#7f7f7f7f\";//    ||context.get('Colour');      context.set('Colour',Colour);\nvar Luma    = msg.payload.Luma ||0;//      ||context.get('Luma');        context.set('Luma',  Luma);\nvar Command = msg.payload.Control||\"null\";\n\nif(Color.search(\"#\")!=-1) {Color  =Color.slice(1,9);  }\n\nvar Multi = parseInt(\"0x\"+Color.slice(6, 8));\nvar Red   = Math.round(Multi/8.0 * (parseInt(\"0x\"+Color.slice(0, 2))-127 )  );\nvar Green = Math.round(Multi/8.0 * (parseInt(\"0x\"+Color.slice(2, 4))-127 )  );\nvar Blue  = Math.round(Multi/8.0 * (parseInt(\"0x\"+Color.slice(4, 6))-127 )  );\n\nif(Command == \"resetColour\"){\n\n    Red = 0; Green = 0; Blue = 0; Luma = 0;\n    \n    \n}\n\n\nmsg.payload = { Red: Red, Green: Green, Blue: Blue, Luma: Luma,  Colour: \"#\"+Color };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1590,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9652e159f3860b5",
+        "type": "join",
+        "z": "850922586005cb85",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 650,
+        "y": 540,
+        "wires": [
+            [
+                "34688b37189be39a"
+            ]
+        ]
+    },
+    {
+        "id": "0227f8d8e7818c90",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "LA Data in",
+        "func": "\n\nmsg.payload = msg.payload;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "9e82e42377c3ae9b",
+                "a9e35572f80c8d9e"
+            ]
+        ]
+    },
+    {
+        "id": "9e82e42377c3ae9b",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "Load Colour",
+        "func": "var Color  = msg.payload.Colour;//    ||context.get('Colour');      context.set('Colour',Colour);\n\n\n\n\n\n\nvar Command = msg.payload.Control;\n\n\n\nif(Command == \"resetColour\") { msg.payload = \"#7f7f7f7f\"; return msg;} \nif(Command == \"setColour\")   { msg.payload = Color;       return msg;} ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 420,
+        "wires": [
+            [
+                "6521379cfea36744"
+            ]
+        ]
+    },
+    {
+        "id": "6bc031a103d63f0b",
+        "type": "ui_template",
+        "z": "850922586005cb85",
+        "group": "d4ffd462.f30fb8",
+        "name": "",
+        "order": 17,
+        "width": 0,
+        "height": 0,
+        "format": "<input type=\"color\" ng-model=\"msg.payload\" ng-change=\"send(msg)\">",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 240,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9e35572f80c8d9e",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "Load Luma",
+        "func": "var Luma    = msg.payload.Luma;//      ||context.get('Luma');        context.set('Luma',  Luma);\nvar Command = msg.payload.Control;\n\n\nif(Command == \"resetColour\") { msg.payload = 0;                 return msg;} \nif(Command == \"setColour\")   { msg.payload = Luma ; return msg;} ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 380,
+        "wires": [
+            [
+                "20e218ab9fbe17a4"
+            ]
+        ]
+    },
+    {
+        "id": "f4035c718ffb50b5",
+        "type": "ui_button",
+        "z": "483d2f3147ffd676",
+        "name": "Reset",
+        "group": "b8ee6a2ac8077816",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "reset",
+        "payloadType": "str",
+        "topic": "reset",
+        "topicType": "str",
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "efa0c40eec386098",
+                "b0e90b14b1b513a2"
+            ]
+        ]
+    },
+    {
+        "id": "efa0c40eec386098",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "Reset",
+        "func": "\n\nmsg.payload = { Control: \"resetColour\"};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 430,
+        "y": 340,
+        "wires": [
+            [
+                "0227f8d8e7818c90",
+                "d6fb61d4c1a3f826"
+            ]
+        ]
+    },
+    {
+        "id": "d6fb61d4c1a3f826",
+        "type": "delay",
+        "z": "483d2f3147ffd676",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1110,
+        "y": 340,
+        "wires": [
+            [
+                "92ac91a856bf47fc"
+            ]
+        ]
+    },
+    {
+        "id": "9c7db995869fd632",
+        "type": "ui_template",
+        "z": "850922586005cb85",
+        "group": "20e1a6a9.63061a",
+        "name": "LumaAdjust",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "format": "<script src=\"https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js\"></script>\n<script>\n    var LumaAdjustScope = scope;\n    var storedLumaAdjust = getLastColor(LumaAdjustScope);\n    var LumaAdjust;\n    \n    /**\n     * initialize iro.js component\n     */\n    function initIroJs()\n    {\n        //wait for iro library to be loaded\n        if(typeof(iro) === 'object')\n        {\n            //and initialize component\n            LumaAdjust = new iro.ColorPicker(\n                \"#color-picker-LumaAdjust\",\n                {\n                    width: 252,\n                   // color: \"rgb(255, 0, 0)\",\n                    layoutDirection:\"horizontal\",\n                    wheelLightness: false,\n                    sliderType: 'alpha',\n                    //sliderSize; 200,\n                    \n                    \n                   // height: 250,\n                    handleRadius: 8,\n                    activeHandleRadius: 8,\n                    //handleUrl: null,\n                    \n                    \n                   \n                      borderWidth: 3,\n                      borderColor: '#338AFF',\n                      padding: 8,\n\n                    color: fixColorString(storedLumaAdjust),\n                }\n            );\n            \n            LumaAdjust.on('input:change', onColorChange);\n        }\n        else\n        {\n            setTimeout(function() { initIroJs(); }, 250);\n        }\n    }\n    \n    function onColorChange()\n    {\n        LumaAdjustScope.send({ payload: LumaAdjust.color.hex8String });\n    }\n    \n    /**\n     * update LumaAdjust state if msg.payload is received\n     * \n     * @param {string} payload - hex color string\n     */\n    function messageReceived(payload)\n    {\n        if(typeof(LumaAdjust) === 'object')\n        {\n            LumaAdjust.color.hexString = fixColorString(payload);\n        }\n    }\n    \n    /**\n     * prefix hex color strings with # if not present\n     * \n     * @param {string} color - hex color string\n     */\n    function fixColorString(color)\n    {\n        return color.startsWith('#') ? color : '#' + color;\n    }\n    \n    /**\n     * checks for stored msg object and returns the last set color, if present\n     * \n     * @param {object} LumaAdjustScope\n     */\n    function getLastColor(LumaAdjustScope)\n    {\n        //check if stored state has a msg object\n        if(typeof(LumaAdjustScope.msg) === 'object')\n        {\n            //check if payload is a hex color string\n            if(typeof(LumaAdjustScope.msg.payload) === 'string' &&\n               LumaAdjustScope.msg.payload.match(/^#?[A-Fa-f0-9]{6}$/))\n            {\n                return LumaAdjustScope.msg.payload;\n            }\n        }\n        \n        return '#000000';\n    }\n    \n    LumaAdjustScope.$watch('msg.payload', messageReceived); //listen for incoming messages\n    initIroJs();\n</script>\n<div id=\"color-picker-LumaAdjust\" style=\"min-height: 252px;\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 760,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d416e767d6e35f1",
+        "type": "ui_slider",
+        "z": "850922586005cb85",
+        "name": "Luma",
+        "label": "Luma",
+        "tooltip": "",
+        "group": "20e1a6a9.63061a",
+        "order": 2,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "80",
+        "max": "2560",
+        "step": 1,
+        "x": 750,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0edace9056d17b6e",
+        "type": "function",
+        "z": "850922586005cb85",
+        "name": "Load Colour",
+        "func": "var Command = msg.payload.Control;\n\n\nif(Command == \"resetColour\") { msg.payload = \"7f7f7f7f\"; return msg;} \nif(Command == \"setColour\")   { msg.payload = msg.payload.Colour; return msg;} ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 590,
+        "y": 900,
+        "wires": [
+            [
+                "9c7db995869fd632"
+            ]
+        ]
+    },
+    {
+        "id": "fc7b59c7e5a4c023",
+        "type": "function",
+        "z": "850922586005cb85",
+        "name": "Data in",
+        "func": "\n\nmsg.payload = msg.payload;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 880,
+        "wires": [
+            [
+                "0edace9056d17b6e"
+            ]
+        ]
+    },
+    {
+        "id": "8dd0efd74b3a2424",
+        "type": "function",
+        "z": "850922586005cb85",
+        "name": "Reset",
+        "func": "\n\nmsg.payload = { Control: \"resetColour\"};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 350,
+        "y": 820,
+        "wires": [
+            [
+                "fc7b59c7e5a4c023"
+            ]
+        ]
+    },
+    {
+        "id": "d90f8f8b0f25d517",
+        "type": "ui_button",
+        "z": "850922586005cb85",
+        "name": "Reset",
+        "group": "20e1a6a9.63061a",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "reset",
+        "payloadType": "str",
+        "topic": "reset",
+        "topicType": "str",
+        "x": 190,
+        "y": 800,
+        "wires": [
+            [
+                "8dd0efd74b3a2424"
+            ]
+        ]
+    },
+    {
+        "id": "6521379cfea36744",
+        "type": "ui_template",
+        "z": "483d2f3147ffd676",
+        "group": "b8ee6a2ac8077816",
+        "name": "LiftAdjust",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "format": "<script src=\"https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js\"></script>\n<script>\n    var LumaAdjustScope = scope;\n    var LumaAdjust;\n   \n    \n\n    function initIroJs()\n    {\n        //wait for iro library to be loaded\n        if(typeof(iro) === 'object')\n        {\n            //and initialize component\n            LumaAdjust = new iro.ColorPicker(\n                \"#color-picker-LumaAdjust\",\n                {\n                    width: 250,\n                    layoutDirection:\"horizontal\",\n                    wheelLightness: false,\n                    sliderType: 'alpha',\n                    handleRadius: 8,\n                    activeHandleRadius: 8,\n                    borderWidth: 3,\n                    borderColor: '#338AFF',\n                    padding: 8,\n\n                    //color: ser colour\n                }\n            );\n            \n            LumaAdjust.on('color:change', onUserInput); //input:change\n        }\n        else  {  setTimeout(function() { initIroJs(); }, 250);}\n    }\n    \n    function onUserInput() {\n        //add ratereduction here\n  \n         messageSend(LumaAdjust.color.hex8String);\n        \n    }\n    \n    function messageSend(DataOut){LumaAdjustScope.send({ payload: DataOut, topic: \"Color\"}); }\n\n    function messageReceived(payload)\n    {\n        if(typeof(LumaAdjust) === 'object') {\n            \n            LumaAdjust.color.hexString = fixColorString(payload); \n            {  setTimeout(function() { messageSend(payload); }, 100);} }\n    }\n    \n\n    function fixColorString(color)  { return color.startsWith('#') ? color : '#' + color; }\n    \n\n    \n    LumaAdjustScope.$watch('msg.payload', messageReceived); //listen for incoming messages\n    initIroJs();\n    \n    \n</script>\n<div id=\"color-picker-LumaAdjust\" style=\"min-height: 252px;\"></div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 820,
+        "y": 520,
+        "wires": [
+            [
+                "21f54ab556b23b57"
+            ]
+        ]
+    },
+    {
+        "id": "21f54ab556b23b57",
+        "type": "delay",
+        "z": "483d2f3147ffd676",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "24",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1000,
+        "y": 520,
+        "wires": [
+            [
+                "5a8fccbbffeb5981"
+            ]
+        ]
+    },
+    {
+        "id": "a1865210651241dd",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "Luma to object",
+        "func": "msg.payload.Luma = msg.payload;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1040,
+        "y": 380,
+        "wires": [
+            [
+                "7d4f07cd7637550f"
+            ]
+        ]
+    },
+    {
+        "id": "5a8fccbbffeb5981",
+        "type": "function",
+        "z": "483d2f3147ffd676",
+        "name": "LumaAdjust to object",
+        "func": "\n\nmsg.payload.Color = msg.payload;\n\nreturn msg;\n\n\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1240,
+        "y": 520,
+        "wires": [
+            [
+                "7d4f07cd7637550f"
+            ]
+        ]
+    },
+    {
+        "id": "7d4f07cd7637550f",
+        "type": "join",
+        "z": "483d2f3147ffd676",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1390,
+        "y": 380,
+        "wires": [
+            [
+                "92ac91a856bf47fc"
+            ]
+        ]
+    },
+    {
+        "id": "db6e3c8049e6ce99",
+        "type": "ui_slider",
+        "z": "e829f096ddbb477a",
+        "name": "Luma",
+        "label": "Luma",
+        "tooltip": "",
+        "group": "66354d1f.53421c",
+        "order": 3,
+        "width": "6",
+        "height": "1",
+        "passthru": true,
+        "outs": "all",
+        "topic": "Luma",
+        "topicType": "str",
+        "min": "0",
+        "max": "32760",
+        "step": 1,
+        "x": 890,
+        "y": 480,
+        "wires": [
+            [
+                "68f10b1b3078909f"
+            ]
+        ]
+    },
+    {
+        "id": "2db12b44b0366933",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "Gain Adjust",
+        "func": "\nvar Color  = msg.payload.Color ||\"#7f7f7f20\";//    ||context.get('Colour');      context.set('Colour',Colour);\nvar Luma    = msg.payload.Luma ||2048;//      ||context.get('Luma');        context.set('Luma',  Luma);\nvar Command = msg.payload.Control||\"null\";\n\nif(Color.search(\"#\")!=-1) {Color  =Color.slice(1,9);  }\n\nvar Multi = parseInt(\"0x\"+Color.slice(6, 8));\nvar Red   = Math.round(Multi/2.0 * (parseInt(\"0x\"+Color.slice(0, 2)) )  );\nvar Green = Math.round(Multi/2.0 * (parseInt(\"0x\"+Color.slice(2, 4)) )  );\nvar Blue  = Math.round(Multi/2.0 * (parseInt(\"0x\"+Color.slice(4, 6)) )  );\n\nif(Command == \"resetColour\"){\n\n    Red = 2048; Green = 2048; Blue = 2048; Luma = 2048;\n    \n    \n}\n\n\nmsg.payload = { Red: Red, Green: Green, Blue: Blue, Luma: Luma,  Colour: \"#\"+Color };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1610,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae1df301e9eaf663",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "Data in",
+        "func": "\n\nmsg.payload = msg.payload;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "6ba533f6873ad1bd",
+                "75e3a5c78326f2bb"
+            ]
+        ]
+    },
+    {
+        "id": "6ba533f6873ad1bd",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "Load Colour",
+        "func": "var Color   = msg.payload.Colour;//    ||context.get('Colour');      context.set('Colour',Colour);\nvar Command = msg.payload.Control;\n\n\nif(Command == \"resetColour\") { msg.payload = \"#7f7f7f20\"; return msg;} \nif(Command == \"setColour\")   { msg.payload = Color;       return msg;} ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 690,
+        "y": 520,
+        "wires": [
+            [
+                "fc3b8afdd875b71c",
+                "2287a3519044206c"
+            ]
+        ]
+    },
+    {
+        "id": "75e3a5c78326f2bb",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "Load Luma",
+        "func": "var Luma    = msg.payload.Luma;//      ||context.get('Luma');        context.set('Luma',  Luma);\nvar Command = msg.payload.Control;\n\n\nif(Command == \"resetColour\") { msg.payload = 2048;                 return msg;} \nif(Command == \"setColour\")   { msg.payload = Luma ; return msg;} ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 690,
+        "y": 480,
+        "wires": [
+            [
+                "db6e3c8049e6ce99"
+            ]
+        ]
+    },
+    {
+        "id": "dafbfe834ef0e3ab",
+        "type": "ui_button",
+        "z": "e829f096ddbb477a",
+        "name": "ResetGain",
+        "group": "66354d1f.53421c",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "resetGain",
+        "payloadType": "str",
+        "topic": "resetGain",
+        "topicType": "str",
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "f12d4809e5af41c6"
+            ]
+        ]
+    },
+    {
+        "id": "f12d4809e5af41c6",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "Reset",
+        "func": "\n\nmsg.payload = { Control: \"resetColour\"};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "ae1df301e9eaf663",
+                "dd49d68a6bd865e3"
+            ]
+        ]
+    },
+    {
+        "id": "dd49d68a6bd865e3",
+        "type": "delay",
+        "z": "e829f096ddbb477a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1130,
+        "y": 440,
+        "wires": [
+            [
+                "2db12b44b0366933"
+            ]
+        ]
+    },
+    {
+        "id": "fc3b8afdd875b71c",
+        "type": "ui_template",
+        "z": "e829f096ddbb477a",
+        "group": "66354d1f.53421c",
+        "name": "GainAdjust",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "format": "<script src=\"https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js\"></script>\n<script>\n    var GainAdjustScope = scope;\n    var GainAdjust;\n \n    \n\n    function initIroJsG()\n    {\n        //wait for iro library to be loaded\n        if(typeof(iro) === 'object')\n        {\n            //and initialize component\n            GainAdjust = new iro.ColorPicker(\n                \"#color-picker-GainAdjust\",\n                {\n                    width: 250,\n                    layoutDirection:\"horizontal\",\n                    wheelLightness: false,\n                    sliderType: 'alpha',\n                    handleRadius: 8,\n                    activeHandleRadius: 8,\n                    borderWidth: 3,\n                    borderColor: '#338AFF',\n                    padding: 8,\n\n                    //color: ser colour\n                }\n            );\n            \n            GainAdjust.on('color:change', onUserInputG); //input:change\n        }\n        else  {  setTimeout(function() { initIroJsG(); }, 250);}\n    }\n    \n    function onUserInputG() {\n        //add ratereduction here\n  \n         messageSendG(GainAdjust.color.hex8String);\n        \n    }\n    \n    function messageSendG(DataOut){GainAdjustScope.send({ payload: DataOut, topic: \"Color\"}); }\n\n    function messageReceivedG(payload)\n    {\n        if(typeof(GainAdjust) === 'object') {\n          \n            GainAdjust.color.hexString = fixColorString(payload); \n            {  setTimeout(function() { messageSendG(payload); }, 100);}\n            }\n    }\n    \n\n    function fixColorString(color)  { return color.startsWith('#') ? color : '#' + color; }\n    \n\n    \n    GainAdjustScope.$watch('msg.payload', messageReceivedG); //listen for incoming messages\n    initIroJsG();\n    \n    \n</script>\n<div id=\"color-picker-GainAdjust\" style=\"min-height: 252px;\"></div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 850,
+        "y": 620,
+        "wires": [
+            [
+                "02a193df4942e11a"
+            ]
+        ]
+    },
+    {
+        "id": "02a193df4942e11a",
+        "type": "delay",
+        "z": "e829f096ddbb477a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "24",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1020,
+        "y": 620,
+        "wires": [
+            [
+                "90207107e37062a8"
+            ]
+        ]
+    },
+    {
+        "id": "68f10b1b3078909f",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "Luma to object",
+        "func": "msg.payload.Luma = msg.payload;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1060,
+        "y": 480,
+        "wires": [
+            [
+                "b841cdc4e52ff0c9"
+            ]
+        ]
+    },
+    {
+        "id": "90207107e37062a8",
+        "type": "function",
+        "z": "e829f096ddbb477a",
+        "name": "GainAdjust to object",
+        "func": "\n\nmsg.payload.Color = msg.payload;\n\nreturn msg;\n\n\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1260,
+        "y": 620,
+        "wires": [
+            [
+                "b841cdc4e52ff0c9"
+            ]
+        ]
+    },
+    {
+        "id": "b841cdc4e52ff0c9",
+        "type": "join",
+        "z": "e829f096ddbb477a",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1410,
+        "y": 480,
+        "wires": [
+            [
+                "2db12b44b0366933"
+            ]
+        ]
+    },
+    {
+        "id": "b0e90b14b1b513a2",
+        "type": "debug",
+        "z": "483d2f3147ffd676",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2287a3519044206c",
+        "type": "debug",
+        "z": "e829f096ddbb477a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "5e87028024babddc",
+        "type": "ui_slider",
+        "z": "3078f533f70dc67d",
+        "name": "Exp.",
+        "label": "Exp.&nbsp;",
+        "tooltip": "",
+        "group": "3014c2c4.1707ee",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "0",
+        "max": "5000",
+        "step": 1,
+        "x": 710,
+        "y": 760,
+        "wires": [
+            [
+                "1374b64ed15d7b50"
+            ]
+        ]
+    },
+    {
+        "id": "283012e692aa4ef4",
+        "type": "ui_slider",
+        "z": "3078f533f70dc67d",
+        "name": "Tint",
+        "label": "Tint &emsp; &ensp; ",
+        "tooltip": "",
+        "group": "3014c2c4.1707ee",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "Tint",
+        "topicType": "str",
+        "min": "-50",
+        "max": "50",
+        "step": "1",
+        "x": 710,
+        "y": 600,
+        "wires": [
+            [
+                "bdbfe49afc7a6af6"
+            ]
+        ]
+    },
+    {
+        "id": "bdbfe49afc7a6af6",
+        "type": "join",
+        "z": "3078f533f70dc67d",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 830,
+        "y": 600,
+        "wires": [
+            [
+                "b6eb27c888e0d45a"
+            ]
         ]
     }
 ]
